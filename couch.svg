@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<!-- couch.svg — motifs drawn from the painted couch (OINK · MOO, Charlotte).
+
+     The couch works because a heavy black outline holds every wild colour together.
+     Every symbol here follows that rule: flat saturated fills, one thick dark stroke,
+     no gradients, no shading. They are decoration only — always aria-hidden, never
+     the sole carrier of meaning.
+
+     Colours come from the --c-* tokens so they re-theme with the app; the outline is
+     --c-outline, which lightens in dark mode so the ink line doesn't disappear.
+
+     This file is the SOURCE. It is pasted into index.html at build/edit time and
+     referenced with a bare fragment — an external reference does NOT resolve:
+        works:        <svg class="doodle"><use href="#d-flower"/></svg>
+        renders nothing: <use href="couch.svg#d-flower"/>
+-->
+<defs>
+  <style>
+    .o { fill: none; stroke: var(--c-outline, #1B1526); stroke-width: 5;
+         stroke-linecap: round; stroke-linejoin: round; }
+    .of{ stroke: var(--c-outline, #1B1526); stroke-width: 5; stroke-linejoin: round; }
+  </style>
+</defs>
+
+<!-- flower — the six-petal bloom on the left arm -->
+<symbol id="d-flower" viewBox="0 0 100 100">
+  <g class="of">
+    <circle cx="50" cy="22" r="15" fill="var(--c-bubble,#F58ABF)"/>
+    <circle cx="74" cy="36" r="15" fill="var(--c-marigold,#F4B62C)"/>
+    <circle cx="74" cy="64" r="15" fill="var(--c-moo,#14BCD1)"/>
+    <circle cx="50" cy="78" r="15" fill="var(--c-grape,#8A3DC6)"/>
+    <circle cx="26" cy="64" r="15" fill="var(--c-meadow,#5FBE44)"/>
+    <circle cx="26" cy="36" r="15" fill="var(--c-coral,#F1663F)"/>
+    <circle cx="50" cy="50" r="14" fill="var(--c-oink,#E22C8E)"/>
+  </g>
+</symbol>
+
+<!-- eye — the wide staring eye near the middle cushion -->
+<symbol id="d-eye" viewBox="0 0 100 100">
+  <g class="of">
+    <path d="M8 50 Q50 12 92 50 Q50 88 8 50 Z" fill="var(--c-sky,#63C6E8)"/>
+    <circle cx="50" cy="50" r="20" fill="var(--c-marigold,#F4B62C)"/>
+    <circle cx="50" cy="50" r="9" fill="var(--c-outline,#1B1526)" stroke="none"/>
+  </g>
+</symbol>
+
+<!-- spiral — the big swirl on the seat.
+     Built from half-turn arcs of growing radius (6, 10, 14, 18, 22), which draws a true
+     spiral in a few bytes; the sampled-polyline version was 10x the size and no smoother. -->
+<symbol id="d-spiral" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="42" fill="var(--c-cobalt,#2A57D4)" class="of"/>
+  <path class="o" stroke="var(--c-sky,#63C6E8)" stroke-width="7" fill="none"
+        d="M54 50 A6 6 0 0 1 42 50 A10 10 0 0 1 62 50 A14 14 0 0 1 34 50
+           A18 18 0 0 1 70 50 A22 22 0 0 1 26 50"/>
+</symbol>
+
+<!-- star burst — the little sparks scattered across the back -->
+<symbol id="d-star" viewBox="0 0 100 100">
+  <path class="of" fill="var(--c-marigold,#F4B62C)"
+        d="M50 6 L61 36 L92 34 L67 54 L79 84 L50 66 L21 84 L33 54 L8 34 L39 36 Z"/>
+</symbol>
+
+<!-- the little pink cow on the back cushion — the one the couch is named for -->
+<symbol id="d-cow" viewBox="0 0 100 100">
+  <g class="of">
+    <path d="M22 76 L22 90 M38 76 L38 90 M58 76 L58 90 M72 76 L72 90" class="o"/>
+    <path d="M14 54 Q6 44 10 34" class="o"/>
+    <rect x="12" y="40" width="64" height="36" rx="14" fill="var(--c-bubble,#F58ABF)"/>
+    <ellipse cx="34" cy="56" rx="11" ry="8" fill="var(--c-oink,#E22C8E)"/>
+    <path d="M72 30 Q70 20 78 22 M92 30 Q95 20 87 23" class="o"/>
+    <circle cx="82" cy="44" r="16" fill="var(--c-bubble,#F58ABF)"/>
+    <circle cx="78" cy="40" r="3.5" fill="var(--c-outline,#1B1526)" stroke="none"/>
+    <path d="M76 52 Q84 56 90 52" class="o" stroke-width="4"/>
+  </g>
+</symbol>
+
+<!-- blob face — the stacked lozenge characters along the base -->
+<symbol id="d-face" viewBox="0 0 100 100">
+  <g class="of">
+    <rect x="18" y="10" width="64" height="80" rx="30" fill="var(--c-meadow,#5FBE44)"/>
+    <circle cx="38" cy="42" r="7" fill="var(--c-outline,#1B1526)" stroke="none"/>
+    <circle cx="62" cy="42" r="7" fill="var(--c-outline,#1B1526)" stroke="none"/>
+    <path d="M36 64 Q50 76 64 64" class="o"/>
+  </g>
+</symbol>
+
+<!-- wave — the ribbon stripes running under the seat -->
+<symbol id="d-wave" viewBox="0 0 100 100">
+  <g class="o" stroke-width="9">
+    <path d="M6 32 Q28 12 50 32 T94 32" stroke="var(--c-coral,#F1663F)"/>
+    <path d="M6 54 Q28 34 50 54 T94 54" stroke="var(--c-moo,#14BCD1)"/>
+    <path d="M6 76 Q28 56 50 76 T94 76" stroke="var(--c-grape,#8A3DC6)"/>
+  </g>
+</symbol>
+
+<!-- heart — the small hearts tucked in the right cushion -->
+<symbol id="d-heart" viewBox="0 0 100 100">
+  <path class="of" fill="var(--c-oink,#E22C8E)"
+        d="M50 84 C18 62 10 44 20 30 C30 16 46 20 50 34 C54 20 70 16 80 30 C90 44 82 62 50 84 Z"/>
+</symbol>
+</svg>
