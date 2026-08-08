@@ -1298,3 +1298,21 @@ body{font-family:var(--sans); overflow-x:clip;}
 
 /* mobile: hide the bottom gate floaters (frog + sprout) that peek under the card */
 @media (max-width:560px){ #gate .gf-frog, #gate .gf-sprout, #gate .gf-eye, #gate .gf-duck, #gate .gate-wanderpup{ display:none; } }
+
+/* ============================================================================
+   Study-guide color coding — STEP 1 (additive · token-based · answers only).
+   Upgrades bold key terms to the marker-highlight and turns a "🪝 Hook:" line
+   into its own marigold box. Uses the student's own --accent, so it follows the
+   skyworld + whatever scheme they've picked. Nothing else in the app is touched.
+   ========================================================================== */
+.answer .abody strong{                       /* key terms: keep the colored bold, add the highlight swipe */
+  background:linear-gradient(transparent 56%, color-mix(in srgb, var(--accent) 32%, transparent) 56%);
+  border-radius:2px; padding:0 1px;
+}
+.answer .abody .sg-hook{                      /* the memory hook, in its own box */
+  margin:11px 0 2px; padding:9px 12px; border-radius:10px; font-size:13.5px; line-height:1.5;
+  white-space:normal;
+  background:color-mix(in srgb, #F4B62C 15%, var(--card));
+  border:1px solid color-mix(in srgb, #F4B62C 55%, var(--line));
+}
+.answer .abody .sg-hook strong{ background:none; padding:0; color:#E0662F; }  /* coral label, no highlight inside the box */
