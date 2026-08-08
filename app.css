@@ -1327,3 +1327,21 @@ body{font-family:var(--sans); overflow-x:clip;}
 .sg-cheat td:first-child{ padding-right:14px; }
 .sg-cheat td:last-child{ text-align:right; font-weight:800; color:#F4B62C; }
 .sg-cheat td:last-child strong{ background:none; color:#F4B62C; }
+
+/* Study-guide — STEP 3: the cover at the very top of a note (gradient hero + couch sun, or an image). */
+.sg-cover{ border:3px solid var(--ink); border-radius:18px; overflow:hidden; margin:0 0 16px; background:var(--card); box-shadow:0 12px 30px -16px rgba(0,0,0,.5); }
+.sg-cover .sg-hero{ height:118px; position:relative;
+  background:radial-gradient(120px 90px at 78% 28%, rgba(255,255,255,.5), transparent 60%), linear-gradient(135deg, var(--accent), #8A3DC6); }
+.sg-cover .sg-hero.has-img{ height:auto; background:none; }
+.sg-cover .sg-hero.has-img img{ width:100%; max-height:210px; object-fit:cover; display:block; }
+.sg-cover .sg-sun{ position:absolute; right:22px; top:20px; width:58px; height:58px; border-radius:50%; background:#FBF5EC; border:3px solid var(--ink); box-shadow:0 0 0 9px rgba(255,255,255,.16); }
+.sg-cover .sg-cap{ padding:13px 17px 15px; }
+.sg-cover .sg-kk{ text-transform:uppercase; letter-spacing:.2em; font-size:11px; font-weight:800; color:var(--accent); }
+.sg-cover .sg-title{ margin:4px 0 4px; font-size:24px; font-weight:800; line-height:1.12; color:var(--ink); }
+.sg-cover .sg-meta{ color:var(--muted); font-size:12.5px; }
+.sg-cover .sg-meta b{ color:var(--ink); }
+@media print{
+  .sg-cover{ border:none; box-shadow:none; border-radius:0; margin-bottom:14px; }
+  .sg-cover .sg-hero{ display:none; }
+  .sg-cover .sg-cap{ padding:0 0 10px; border-bottom:2px solid var(--accent); }
+}
