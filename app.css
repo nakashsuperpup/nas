@@ -1316,3 +1316,14 @@ body{font-family:var(--sans); overflow-x:clip;}
   border:1px solid color-mix(in srgb, #F4B62C 55%, var(--line));
 }
 .answer .abody .sg-hook strong{ background:none; padding:0; color:#E0662F; }  /* coral label, no highlight inside the box */
+
+/* Study-guide — STEP 2: the "know-cold" cheat card pinned at the top of a note.
+   Dark ink card w/ marigold values + an accent drop-shadow; inverts correctly per theme. */
+.sg-cheat{ background:var(--ink); color:var(--card); border-radius:14px; padding:15px 17px; margin:0 0 16px; box-shadow:5px 5px 0 var(--accent); }
+.sg-cheat h4{ margin:0 0 9px; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; font-weight:800; color:#F4B62C; }
+.sg-cheat table{ width:100%; border-collapse:collapse; font-size:14.5px; }
+.sg-cheat td{ padding:5px 3px; border-bottom:1px solid color-mix(in srgb, var(--card) 22%, transparent); }
+.sg-cheat tr:last-child td{ border-bottom:none; }
+.sg-cheat td:first-child{ padding-right:14px; }
+.sg-cheat td:last-child{ text-align:right; font-weight:800; color:#F4B62C; }
+.sg-cheat td:last-child strong{ background:none; color:#F4B62C; }
